@@ -1,5 +1,5 @@
 pipeline{
-   agent any
+//   agent any
    stages{
      stage('Clone code'){
        steps{
@@ -15,7 +15,7 @@ pipeline{
    
      stage('unit test'){
        steps{
-          sh 'mvn compiler:testcompile'
+          sh 'mvn compiler:testCompile'
           sh 'mvn surefire:test'
           junit 'target/**/*.xml'
        }
