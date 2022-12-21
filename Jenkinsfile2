@@ -1,0 +1,31 @@
+pipeline{
+   agent any
+   stages{
+     stage('Clone code'){
+       steps{
+          checkout scm
+       }      
+     }
+     
+     stage('Build'){
+       steps{
+          sh 'mvn install -Dmaven.test.skip=true'
+       } 
+     }
+   
+     stage('unit test'){
+       steps{
+          sh 'mvn compiler:testcompile'
+          sh 'mvn surefire:test'
+          junit 'target/**/*.xml'
+       }
+     }
+
+     stage('deployement'){
+        steps{
+          sh 'sudo -s sshpass -p "bata7004" scp target/gamutgurus.war mukesh@172.17.0.3:/home/mukesh/deploy/apache-tomcat-9.0.70/webapp'
+          sh 'sudo -s sshpass -p "bata7004" ssh -T  target/gamutgurus.war mukesh@172.17.0.3:/home/mukesh/deploy/apache-tomcat-9.0.70/bin/startup.sh"'
+        }
+     }
+   }
+}
