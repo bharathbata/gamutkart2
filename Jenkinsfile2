@@ -23,8 +23,8 @@ pipeline{
 
      stage('deployement'){
         steps{
-          sh 'sudo -s sshpass -p "bata7004" scp target/gamutgurus.war mukesh@172.17.0.3:/home/mukesh/deploy/apache-tomcat-9.0.70/webapps'
-          sh 'sudo -s sshpass -p "bata7004" ssh -T  target/gamutgurus.war mukesh@172.17.0.3:/home/mukesh/deploy/apache-tomcat-9.0.70/bin/startup.sh"'
+          sh 'sshpass -p "bata7004" scp target/gamutgurus.war mukesh@172.17.0.3:/home/mukesh/deploy/apache-tomcat-9.0.70/webapps'
+          sh 'sshpass -p "bata7004" ssh -T  target/gamutgurus.war mukesh@172.17.0.3:/home/mukesh/deploy/apache-tomcat-9.0.70/bin/startup.sh"'
         }
      }
    }
