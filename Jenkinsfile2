@@ -5,7 +5,7 @@ agent any
   
    stage('clone'){
       steps{
-        Checkout scm
+        checkout scm
       }  
    }
   
