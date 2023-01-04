@@ -1,5 +1,4 @@
-pipline {
-agent any
+pipeline {
     stages {
         stage ("clone"){
             steps{
