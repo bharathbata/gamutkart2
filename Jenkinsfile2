@@ -3,7 +3,8 @@ pipeline
   environment {
      mvn_HOME = '/usr/share/maven'
      PATH = "${MVN_HOME}/bin:${PATH}"
-  stages{
+  }
+ stages{
     stage('Install maven'){
      steps{
        sh 'sudo apt-get update'
@@ -34,4 +35,4 @@ pipeline
       }
     }
  } 
-}
+
