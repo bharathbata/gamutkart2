@@ -31,3 +31,6 @@ pipeline
       steps{
         sh 'sudo -s sshpass -p "bata7004" scp target/gamutgurus.war bata@172.17.0.2:/home/bata/apache-tomcat-9.0.65/webapps'
         sh 'sudo -s sshpass -p "bata7004" ssh -T bata@172.17.0.2 "/home/bata/apache-tomcat-9.0.65/bin/startup.sh"'
+      }
+    }
+  }
