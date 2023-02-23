@@ -1,4 +1,4 @@
-pipeline
+pipeline{
   agent any
   environment {
      mvn_HOME = '/usr/share/maven'
@@ -35,4 +35,4 @@ pipeline
       }
     }
  } 
-
+}
