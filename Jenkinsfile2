@@ -1,16 +1,16 @@
 pipeline{
   agent any
-#  environment {
-#    mvn_HOME = '/usr/share/maven'
-#    PATH = "${MVN_HOME}/bin:${PATH}"
-#  }
+// environment {
+//   mvn_HOME = '/usr/share/maven'
+//    PATH = "${MVN_HOME}/bin:${PATH}"
+//  }
  stages{
-#    stage('Install maven'){
-#    steps{
-#       sh 'sudo apt-get update'
-#       sh 'sudo apt-get install -y maven'
-#     }
-#    }
+//    stage('Install maven'){
+//    steps{
+//       sh 'sudo apt-get update'
+//       sh 'sudo apt-get install -y maven'
+//     }
+//    }
     stage('clone'){
      steps{
        checkout scm
